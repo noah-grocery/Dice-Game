@@ -19,21 +19,21 @@
         var firstTurn = true;
         var point;
 
-        function throwDice() {
+        function throwdice() {
             var sum;
 
-            var ch = 1 + Math.floor(Math.random() * 6);
+            var ch = 1+Math.floor(Math.random()* 6);
             sum = ch;
             dx = dicex;
             dy = dicey;
             drawFace(ch);
             dx = dicex + 150;
-            ch = 1 + Math.floor(Math.random() * 6);
+            ch=1 + Math.floor(Math.random()*6);
             sum += ch;
             drawFace(ch);
             if (firstTurn) {
 
-                switch (sum) {
+                switch(sum) {
                     case 7:
                     case 11:
                         document.f.outcome.value = "You win!";
@@ -45,14 +45,14 @@
                         break;
                     default:
                         point = sum;
-                        document.f.pv.value = point;
+                        document.f.pv.value=point;
                         firstTurn = false;
                         document.f.stage.value = "Need follow-up throw.";
                         document.f.outcome.value = " ";
                 }
             }
             else {
-                switch (sum) {
+                switch(sum) {
                     case point:
                         document.f.outcome.value = "You win!";
                         document.f.stage.value = "Back to first throw.";
@@ -73,7 +73,7 @@
             ctx.clearRect(dx, dy, diceWidth, diceHeight);
             ctx.strokeRect(dx, dy, diceWidth, diceHeight);
             ctx.fillStyle = "#009966";
-            switch (n) {
+            switch(n) {
                 case 1:
                     draw1();
                     break;
@@ -151,11 +151,9 @@
 </head>
 
 <body>
-    <canvas id="canvas" width="400" height="300">
-        Your broswer doesn't support the HTML5 element canvas.
-    </canvas>
-    <br />
-    <button onClick="throwDice();">
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <br/>
+    <button onClick="throwdice();">
         Throw dice
     </button>
     <form name="f">
@@ -166,4 +164,3 @@
 </body>
 
 </html>
-b
