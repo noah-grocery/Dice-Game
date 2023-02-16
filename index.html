@@ -118,7 +118,7 @@
             doty = dy + diceHeight - 3 * dotrad;
             ctx.arc(dotx, doty, dotrad, 0, Math.PI * 2, true);
             ctx.closePath();
-            ctx.fille();
+            ctx.fill();
         }
         function draw4() {
             draw2();
@@ -142,25 +142,27 @@
             doty = dy + .5 * diceHeight;
             ctx.arc(dotx, doty, dotrad, 0, Math.PI * 2, true);
             dotx = dx + diceWidth - 3 * dotrad;
-            doty = dy + .5 * diceHeight; //no cnage
+            doty = dy + .5 * diceHeight; //no change
             ctx.arc(dotx, doty, dotrad, 0, Math.PI * 2, true);
             ctx.closePath();
             ctx.fill();
         }
+    
     </script>
 </head>
 
 <body>
     <canvas id="canvas" width="400" height="300"></canvas>
-    <br/>
+    <br>
     <button onClick="throwdice();">
         Throw dice
     </button>
     <form name="f">
-        Stage: <input name="stage" value="First Throw" />
-        Point: <input name="pv" value=" " />
-        Outcome: <input name="outcome" value=" " />
+        Stage: <input name="stage" value="First Throw">
+        Point: <input name="pv" value=" ">
+        Outcome: <input name="outcome" value=" ">
     </form>
+    
 </body>
 
 </html>
